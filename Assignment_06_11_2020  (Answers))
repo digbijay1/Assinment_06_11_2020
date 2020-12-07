@@ -1,0 +1,138 @@
+1.How do you copy by value a composite data type?
+--------------------------------------------------
+Answers:-Arrays, objects, functions are all of object type which comes under composite data types. As we know variable holds data in case of composite data type it holds reference that is address of that particular value in memory.
+var firstArrray= 10; // here firstArray has the value 10.
+var newArray= [10,20] // newArray holds some address like 4903 etc.. not 10 and 20.
+Therefore we can’t clone data in composite data types. To do that spread operator is used, that is three dots (…), it spreads the elements
+of that particular array or object and its values can be used to assign to some other variable.
+2.why there is a difference in behavior for copying contents in primitive and non primitive type? 
+--------------------------------------------------------------------------------------------------
+Answers:-Java Script has five primitive data-types: Boolean, String, Number, null and
+undefined.They are passed by value.
+Similarly Java Script has three other data-types which are collectively known
+as objects or non primitive data type.They are Array, Object and Function.They are passed by reference.
+Copy by value in primitive:->
+If a primitive type is assigned to a variable, we can think of that variable as containing the primitive value.
+When we assign these variables to other variables using = , we copy the value to the new variable. They are copied by value.
+var m = 77;
+var n = x;
+console.log(m,n)// -> 77,77;
+Changing one does not change the other. Therefore,it can be said that variables as having no relationship to each other.
+var y = 80;
+console.log(m,n)// -> 77,80;
+Copy by reference in non-primitive:->
+Variables that are assigned a non-primitive value are given a reference to that value. That reference points to the object’s location in memory. The variables don’t actually contain the value.
+Objects are created at some location in your computer’s memory. When we write arr = [1,2,3], we’ve created an array in memory.What the variable arr receives is the address, the location, of that array.
+When a reference type value, an object, is copied to another variable using =, the address of that value is what’s actually copied over as if it were a primitive. Objects are copied by reference instead of by value.
+var arr = [1,2,3,4];
+var new = arr;
+new.push(9);
+console.log(arr,new); // -> [1,2,3,4,9],[1,2,3,4,9]
+We’ve pushed 4 into the array in memory. When we use new and arr, we’re pointing to that same array.
+3.Use typeof in all the datatypes and check the result
+   i)typeof(1)
+   ii)typeof(1.1)
+   iii)typeof("1.1")
+   iv)typeof(true)
+   v)typeof(null)
+   vi)typeof(undefined)
+   vii)typeof([])
+   viii)typeof({})
+   --------------------------------------------------
+   Answers:- 
+   i)typeof(1)-'number'
+   ii)typeof(1.1)-'number'
+   iii)typeof("1.1")-'string'
+   iv)typeof(true)-'boolean'
+   v)typeof(null):-'object'
+   vi)typeof(undefined):-'undefined'
+   vii)typeof([])-'object'
+   viii)typeof({})-'object'
+4.Write a blog about objects and its internal representation in Javascript
+---------------------------------------------------------------------------
+Answers:-Objects are very most important in each and every language.In java script we have primitive data types called String ,number,boolean,null and object is a composite data type in java script. primitive data types can store only single value where as objects can store multiple values of primitive data in it. Primitive data types are of copy by value and composite data types are copy by reference in js
+Example 1:
+var a = 10;
+var b =a;
+var b = 20;
+console.log(a)//gives 10 ->copy by value
+Example 2:
+var arr = [1];
+var arr1 = arr;
+arr1[0]= 4;
+console.log(arr)//gives [4] ->copy by reference
+Array
+Array is an object in JavaScript and it is of indexing based lets see below example
+var arr = [1,”two”,3.5,[4,5,6,7]]
+arr in above example is an array so in an array we can declare any data type like string int float and even another array and object as well. So we said array is indexed based it means indexing start from 0 to end of array for example if we want to retrive third element we can do by arr[2] //gives 3.5.
+
+5.execute and see at least 15 cli commands. like mkdir, ls etc.
+-------------------------------------------------------------------
+Answers:-
+  1.ls:-This command shows a list of all the files and directories present in the current working directory of your machine.
+  2.mkdir:-If you want to create a new directory on your  filesystem you have to use “mkdir” command. For example- “mkdir dataflair”, this command will create a directory named dataflair on your
+  windows filesystem.
+  3.rm:-This command is used to remove a file from your filesystem. Executing this command will delete that particular file of which you had written name followed by rm. For example- “rm data”, this will remove file named data present in your current working directory.
+  4.pwd:-“pwd” = “Present Working Directory”. It gives you the name of the directory name on which you are currently present or working and shows the path of that directory.
+  5.clear:-This command clears all the data present on your windows terminal window.
+  6.mv:-The main function of this windows command is to change the name of a file/directory or to move a particular file/directory from one place to another.
+  7.cp:-This windows command is used to copy files/directory from one place to another. With the help of this command, the user can easily create multiple copies of a files/directories.
+  8.cat:-This command displays all the contents of a file specified by the user on the standard output device i.e. your computer screen.
+  9.touch:-This Linux command creates an empty file with the specified name in the present working directory of the user. An empty file with size 0 bytes gets created which remains unchanged until the user makes any changes to it.
+  10.echo:-This command displays all the text written after the word “echo”. For example- echo My House name is Sweet Dreams, this command output will be: “My House name is Sweet Dreams”.
+  11. grep:-It mainly searches the text or searches the file for lines containing a match to the given strings or words. It searches the mention string in given file.
+  12.exit:-To exit a shell like log out. It will remind that some jobs are running in background and again writing exit will terminate them and finally it will close the shell.
+  13.cd:-Change the directory path and go to your required path
+  14.ps:-It will display current running process in system. It is also used for view process running on system. It provides an information of current process with detailed information like CPU usage, user id, command name and memory usage.
+  15.head:-Prints first 10 numbers of lines from the mentioned file.
+  16.Tail:-It displays last 10 lines of mentioned file. It is used to print the last N lines from the file on the terminal. It used with log files to read the last few lines to know about the error messages.
+
+6.What is the difference between window, screen, and document in Javascript
+-------------------------------------------------------------------------------
+Answers:-
+Window---->It is an top level heirarchy in javascript and window consist of number of objects in it as properties and DOCUMENT and SCREEN are one of the objects in Window among all. Window represent the complete things about browsers window.All global JavaScript objects, functions, and variables automatically become members of the window object.Global variables are properties of the window object.Global functions are methods of the window object.
+There are lot of properties in window object lets see one example, we can determine the size of the browser window by using below property.
+window.innerHeight ->gives height of browser in pixels.
+so Hierarchy is as below
+DOCUMENT----->It is the actual content of the page i.e the html page you are loading is converted to the DOM object [Document object Model].
+When a web page is loaded, the browser creates a Document Object Model of the page.Java script connects with the HTML and CSS using the DOM OBJECT.Java Script can manipulate all the elements using DOM object. There are several properties in DOCUMENT. Lets see one example below.
+document.getElementById(“header”);// gives the value of header.
+SCREEN-------->It is an property of WINDOW where we can see the content about the users screen.It can be used to display screen width, height etc.
+Properties.
+screen.width
+screen.height
+screen.availWidth
+screen.availHeight
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
